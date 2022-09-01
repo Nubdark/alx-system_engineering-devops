@@ -1,1 +1,1 @@
-script that lists all files (even ones with names beginning with a period character, which are normally hidden
+the type of the file named iamafile in /tmp
