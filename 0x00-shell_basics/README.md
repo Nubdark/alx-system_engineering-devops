@@ -1,1 +1,1 @@
-the type of the file named iamafile in /tmp
+Create a symbolic link to /bin/ls, named __ls__. 
