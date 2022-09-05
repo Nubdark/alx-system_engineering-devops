@@ -1,3 +1,1 @@
-script that writes into the file ls_cwd_content the resu
-lt of the command ls -la. If the file ls_cwd_content already exists, it should be overwritten. If the file ls_cwd_content does not exist
-, create it.
+It is a good file that cuts iron without making a noise
