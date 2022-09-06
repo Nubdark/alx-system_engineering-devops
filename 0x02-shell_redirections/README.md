@@ -1,1 +1,1 @@
-script that displays all users and their home directories, sorted by users
+A gif is worth ten thousand words
