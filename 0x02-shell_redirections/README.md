@@ -1,1 +1,1 @@
-A gif is worth ten thousand words
+25. Acrostic
