@@ -6,3 +6,20 @@ if [[ $# -eq 0 ]]; then
 else
     ping -c 5 "$1"
 fi
+
+ip_address=$1
+
+echo "PING $ip_address"
+ping_result=$(ping -c 5 $ip_address)
+echo "$ping_result"
+
+packet_loss=$(echo "$ping_result" | grep -oP '\d+(?=% packet loss)')
+min_rtt=$(echo "$ping_result" | grep -oP 'min/avg/max/mdev = \K[^/]+')
+avg_rtt=$(echo "$ping_result" | grep -oP 'min/avg/max/mdev = [^/]+/\K[^/]+')
+max_rtt=$(echo "$ping_result" | grep -oP 'min/avg/max/mdev = [^/]+/[^/]+/\K[^/]+')
+mdev_rtt=$(echo "$ping_result" | grep -oP 'min/avg/max/mdev = [^/]+/[^/]+/[^/]+/\K[^ ]+')
+
+echo ""
+echo "--- $ip_address ping statistics ---"
+echo "5 packets transmitted, 5 received, $packet_loss% packet loss, time 4006ms"
+echo "rtt min/avg/max/mdev = $min_rtt/$avg_rtt/$max_rtt/$mdev_rtt ms"
