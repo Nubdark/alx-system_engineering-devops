@@ -7,3 +7,14 @@ else
     ping -c 5 "$1"
 fi
 
+ip_address=$1
+
+echo "PING $ip_address"
+ping_result=$(ping -c 5 $ip_address)
+echo "$ping_result"
+
+rtt_stats=$(echo "$ping_result" | grep -oP 'rtt min/avg/max/mdev = \K[^ ]+')
+echo ""
+echo "--- $ip_address ping ---"
+echo "$rtt_stats ms"
+
