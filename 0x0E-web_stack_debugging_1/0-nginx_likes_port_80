@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# debugging nginx port 80
+# I did it by, starting a new container, installing nginx net toos and updating,first checked status.. it was not running
+# I checked configuration files.. resulted in permission denied
+# Checked listening ports, port 80 was not there: nginx wasn't listening
+# no service was listening to the port.. sudo lsof -i :80, restarted and when status was checked.. Nginx was running and listeningto port 80
+
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
